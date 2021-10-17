@@ -41,7 +41,10 @@ const App = {
 
   // Implement Task 4 Modify the front end of the DAPP
   lookUp: async function (){
-    
+    const { lookUptokenIdToStarInfo } = this.meta.methods;
+    const lookUpId = document.getElementById("lookid").value;
+    const tokenName = await lookUptokenIdToStarInfo(parseInt(lookUpId)).call();
+    App.setStatus("That star is called: " + tokenName + ".");
   }
 
 };
